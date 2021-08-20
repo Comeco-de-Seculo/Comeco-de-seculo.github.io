@@ -47,7 +47,7 @@ const content = ({
       index: 'CDS06',
       length: '03:08',
       title: 'JANAINA WAGNER_Licantropia (excerto)',
-      video: 'https://www.youtube.com/embed/GmRo4C6lHUc?list=TLPQMTgxMjIwMTkkxGxid0ymUA',
+      video: 'https://www.youtube.com/embed/GmRo4C6lHUc',
       thumb: 'static/media/JW_L.png'
     },
     {
