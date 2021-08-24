@@ -93,7 +93,7 @@ function Home() {
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           />
-          <a href="#" onClick={() => setSelectedItem(null)}>
+          <a onClick={() => setSelectedItem(null)}>
             <Close />
           </a>
         </div>
