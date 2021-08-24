@@ -8,15 +8,16 @@ const Modal = () => {
     display: closed ? 'none' : 'block',
     position: 'fixed',
     top: 0,
-    bottom: 0,
+    bottom: 5,
     left: 0,
-    right: 0
+    right: 5,
+    backgroundColor: 'transparent',
+    border: 'none'
   }
   if (closed) return null
   return (
     <div style={viewStyle} className='root'>
-
-      <a href="#" onClick={() => setClosed(true)}><Close /></a>
+      <a onClick={() => setClosed(true)}><Close /></a>
       <div className={'content'}>
       <h1>COMEÇO DE SÉCULO     BEGINNING OF A CENTURY</h1>
       <p>Começo de século, virada enigmática, quem teria coragem de se inclinar na beirada do abismo, para encarar no centro da escuridão, com o corpo posto, todas as feras, queimando a vista diante da fenda, que abre apartando duas eras?! Como um joelho que dispara de encontro às costas, corre todo dia com o colosso das imagens, claudicante enquanto aumentam as escalas das infraestruturas de troca em microssegundos, cada vez mais abstratas. Com os desabamentos e lamaçais, fogaréus sobre selvas e trens, céus rachados e águas turvas, a metáfora não dá mais conta é de nada; e o ranger dos apetites tomando a superfície, e o cardápio infinito de drogas com aqueles emojis, e corpas novos-ciborgues, próteses, hormônios e vocabulários, cravam as unhas e caninos na jugular da linguagem conhecida. Começo de século, se manifestam como sempre, esotéricas, as criaturas terrestres. Na percepção das coisas todas não existe natureza, ou tudo é natureza, alguém vai dizer. Debaixo do roxo crepúsculo, a onça respira, o lobo copula e a cobra morde o próprio rabo. Jogo, chumbo, algoritmo, fluido ou maciço, enigmático. As horas, uma depois da outra, que trazem em seu interior pedras e conchas, ferros e tijolos, e por entre tudo o estalo, que a qualquer instante faz sentir o fio do que fica em pé, do que já vai ruir. Começo de século, sem nunca chegar em lugar algum, <i>agora</i>, estar em caminho, deslocar os passeios, benzer o olho, enxergar na neblina, encarar o trágico, habitar a luz, invadir os vazios, diluir falsas dualidades, manusear a forma, ver de dentro, e de fora, nós e os monumentos. Longe da letargia dos corpos, acordar com os ícones na boca, mastigando o que é decisivo, afastando o agouro. O impulso químico do verbo. <i>Potência em todos os aspectos!</i></p>
@@ -35,7 +36,7 @@ const Modal = () => {
       </p>
       <p className={'center'}>
         ATO ÚNICO / ONE-ACT<br/>
-        Madrugada do dia / Morning of November 5>6<br/>
+        Madrugada do dia / Morning of November 5{'>'}6<br/>
         Início / Starting at: 00h00<br/>
         Duração / Length: 180’<br/>
       </p>
@@ -46,7 +47,7 @@ const Modal = () => {
       <style jsx>{`
         .root {
           color: white;
-          overflow: scroll;
+          overflow-y: scroll;
           font-family: arial;
         }
         .content {
@@ -72,6 +73,7 @@ const Modal = () => {
           display: block;
           position: fixed;
           z-index: 1001;
+          cursor: pointer;
         }
         img {
           width: 35%;
