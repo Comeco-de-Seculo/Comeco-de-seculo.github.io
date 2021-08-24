@@ -1,58 +1,105 @@
-import {useState} from 'react'
-import Head from 'next/head'
-import content from '../content'
-import Close from '../components/Close'
-import Modal from '../components/Modal'
+import { useState } from "react";
+import Head from "next/head";
+import content from "../content";
+import Close from "../components/Close";
+import Modal from "../components/Modal";
 
 function Home() {
-  const [hoverItem, setHoverItem] = useState(null)
-  const [selectedItem, setSelectedItem] = useState(null)
-  
+  const [hoverItem, setHoverItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
+
   return (
-    <div className='page'>
-    <Head>
-      <link rel="stylesheet" type="text/css" href="/static/fonts/stylesheet.css" />
-      <title>{content.title}</title>
-      <link rel="icon" type="image/png" sizes="192x192"  href="/static/android-icon-192x192.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
-      <meta property="og:image" content="/static/share.png" />
-      <meta property="og:title" content={content.title} />
-      <meta property="og:description" content={content.description} />
-      <meta property="og:locale" content="pt_BR" />
-    </Head>
-    <header onClick={() => setSelectedItem(null)}>
-      <img className='logo' src='/static/logo.png' />
-      <div className='t1'>{content.header.text1}</div>
-      <div className='t2' dangerouslySetInnerHTML={{__html: content.header.text2}} />
-      <div className='t3' dangerouslySetInnerHTML={{__html: content.header.text3}} />
-      <div className='t4'>{content.header.text4}</div>
-      {hoverItem && <img className='thumb' src={hoverItem.thumb} />}
-    </header>
-    <table>
-      <tbody>
-        {content.list.map(item =>
-          <tr
-            key={item.index}
-            className='scale-text'
-            onMouseEnter={() => setHoverItem(item)}
-            onMouseLeave={() => setHoverItem(null)}
-            onClick={() => setSelectedItem(item)}
-          >
-            <td><span>{item.index}</span></td>
-            <td><span>{item.length}</span></td>
-            <td><span>{item.title}</span></td>
-          </tr>
-        )}
-      </tbody>
-    </table>
-    {selectedItem && <div className='modal'>
-      <iframe width="1200" height="640" src={selectedItem.video} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-      <a href="#" onClick={() => setSelectedItem(null)}><Close /></a>
-    </div>}
-    <Modal />
-    <style jsx global>{`
+    <div className="page">
+      <Head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="/static/fonts/stylesheet.css"
+        />
+        <title>{content.title}</title>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/static/android-icon-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/static/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/static/favicon-96x96.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/static/favicon-16x16.png"
+        />
+        <meta property="og:image" content="/static/share.png" />
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.description} />
+        <meta property="og:locale" content="pt_BR" />
+      </Head>
+      <header onClick={() => setSelectedItem(null)}>
+        <img className="logo" src="/static/logo.png" />
+        <div className="t1">{content.header.text1}</div>
+        <div
+          className="t2"
+          dangerouslySetInnerHTML={{ __html: content.header.text2 }}
+        />
+        <div
+          className="t3"
+          dangerouslySetInnerHTML={{ __html: content.header.text3 }}
+        />
+        <div className="t4">{content.header.text4}</div>
+        {hoverItem && <img className="thumb" src={hoverItem.thumb} />}
+      </header>
+      <table>
+        <tbody>
+          {content.list.map((item) => (
+            <tr
+              key={item.index}
+              className="scale-text"
+              onMouseEnter={() => setHoverItem(item)}
+              onMouseLeave={() => setHoverItem(null)}
+              onClick={() => setSelectedItem(item)}
+            >
+              <td>
+                <span>{item.index}</span>
+              </td>
+              <td>
+                <span>{item.length}</span>
+              </td>
+              <td>
+                <span>{item.title}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {selectedItem && (
+        <div className="modal">
+          <iframe
+            width="1200"
+            height="640"
+            src={selectedItem.video}
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+          <a href="#" onClick={() => setSelectedItem(null)}>
+            <Close />
+          </a>
+        </div>
+      )}
+      <Modal />
+      <style jsx global>{`
       body {
         margin: 0;
         background-color: black;
@@ -122,7 +169,6 @@ function Home() {
           padding-bottom: 120px
         }
       }
-    }
       @media (min-width: 580px) {
           header > div {
           line-height: 1.2em;
@@ -189,7 +235,8 @@ function Home() {
           height: 60vw;
         }
       }`}</style>
-      </div>
-      )}
-      
-      export default Home
+    </div>
+  );
+}
+
+export default Home;

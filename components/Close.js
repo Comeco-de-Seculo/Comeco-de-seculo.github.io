@@ -11,10 +11,11 @@ const Close = props => (
     height="1em"
     {...props}
   >
-    <style>
-      {
-        '.prefix__st0{clip-path:url(#prefix__SVGID_2_);fill:none;stroke:#fff;stroke-width:2}'
-      }
+    <style jsx>{`
+      
+      .prefix__st0{clip-path:url(#prefix__SVGID_2_);fill:none;stroke:#fff;stroke-width:2}
+
+    `}
     </style>
     <defs>
       <path id="prefix__SVGID_1_" d="M1 .7h37.3V38H1z" />
