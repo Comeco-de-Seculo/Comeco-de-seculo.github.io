@@ -8,11 +8,9 @@ const Modal = () => {
     display: closed ? 'none' : 'block',
     position: 'fixed',
     top: 0,
-    bottom: 5,
+    bottom: 0,
     left: 0,
-    right: 5,
-    backgroundColor: 'transparent',
-    border: 'none'
+    right: 0
   }
   if (closed) return null
   return (
